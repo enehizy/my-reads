@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React ,{Component}from 'react';
+import AppBar from './AppBar';
+import RecentBooks from './RecentBooks';
+import Library from './library';
+import BooksRead from './booksread';
+import {Route} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './index.css';
+import './App.css';
+import 'primereact/resources/themes/nova-light/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import 'primeflex/primeflex.css';
+
+
+
+class App extends Component{
+  render(){
+    return(
+      <div>
+       <AppBar/>
+       <Route exact path='/' component={RecentBooks}/>
+       <Route path='/library' component={Library}/>
+       <Route path='/books-read' component={BooksRead}
+         />
+      </div>
+    )
+  }
 }
 
 export default App;
