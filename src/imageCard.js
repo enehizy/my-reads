@@ -12,12 +12,13 @@ function ImageCard(props){
         {
              books.map((book,index)=>{
              return(
-                 <div className={gridColums} key={index}>
+                 <div className={gridColums}  key={index}>
                      <Card header={
                         <img alt={book.name} src={book.image}/>
                      }
                      footer={
-                        <ReadingListButton/>
+               
+                        <ReadingListButton read={book.read} name={book.name}/>
                      }
                      >
                          

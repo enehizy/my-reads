@@ -20,10 +20,8 @@
   color:#444;
   padding-left:20px;
 }
-.selected-link{
-  color:rgb(166, 166, 247);
-  border-bottom:2px solid rgb(166, 166, 247);
-  font-family: bold;
+.selected-link,.selected-link:hover{
+  color:#444;
 }
 .grid-container{
   width:80%;

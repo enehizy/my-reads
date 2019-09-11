@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink,Link} from 'react-router-dom';
 
 
 function AppBar(props){
@@ -10,9 +10,9 @@ function AppBar(props){
       </div>
      <div className="navigation-bar">
      <ul>
-       <li><Link to='/'  > Recent books</Link></li>
-       <li><Link  to='/Library'  > Library</Link></li>
-       <li><Link to='/books-read'  > Books read</Link></li>
+       <li><NavLink exact to='/'  activeClassName="selected-link"> Recent books</NavLink></li>
+       <li><NavLink  to='/Library'  activeClassName="selected-link"> Library</NavLink></li>
+       <li><NavLink to='/books-read'  activeClassName="selected-link"> Books read</NavLink></li>
        
      </ul>
      

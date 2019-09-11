@@ -1,42 +1,28 @@
 import React,{Component} from 'react';
 import ImageCard from './imageCard';
-
+import {connect} from 'react-redux';
 
 
 class RecentBooks extends Component{
 
-state={
-    books:[
-        {
-            name:'Blockchain Babel',
-            author:'igor pejic',
-            image:'img/Blockchain-Babel-By-Igor-Pejic.jpg'
-        },
-        {
-            name:'Digital @ Scale',
-            author:'anand swaminathan jurgen murffet',
-            image:'img/Digital-@-Scale-By-Anand-Swaminathan-Jurgen-Meffert.jpg'
-        },
-        {
-            name:'Physics of the Future',
-            author:'Michio Kaku',
-            image:'img/Physics-of-the-Future-By-Michio-Kaku.jpg'
-        }
-
-    ]
-}
-
 
  render(){
-     const {books}=this.state;
-    
+     const {books}=this.props;
+    const recentBooks=books.filter((book)=>{
+        return book.name === 'Raising a Screen Smart Kid' || book.author === 'Michio Kaku' || book.name === 'Healing Depression for Life'
+    });
      return(
      <div>
-       <ImageCard books={books}  gridColums='p-col-4'/>
+       <ImageCard books={recentBooks}  gridColums='p-col-4'/>
        
      </div>
      )
  }
 
 }
- export default RecentBooks;
+const mapStateToProps=(state)=>{
+    return{
+        books:state
+    }
+}
+ export default connect(mapStateToProps)(RecentBooks);
