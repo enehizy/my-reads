@@ -10,7 +10,7 @@ class Library extends Component{
        const {books}=this.props;
        return(
            <div>
-               <ImageCard books={books} gridColums='p-col-3'/>
+               <ImageCard books={books} gridColums='p-col-12 p-md-4 p-lg-3'/>
            </div>
        )
    }

@@ -11,7 +11,7 @@ class BooksRead extends Component{
         });
         return(
            <div>
-              <ImageCard books={readBooks} gridColums='p-col-4'/>
+              <ImageCard books={readBooks} gridColums='p-col-12 p-md-4'/>
            </div>
         )
     }

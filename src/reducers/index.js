@@ -84,15 +84,15 @@ export function bookReducer(state=bookState,action){
     const {name}=action;
     switch(action.type){
         case ADD_TO_READ:
-          let index=state.findIndex((s)=>{
+          let indexForAdd=state.findIndex((s)=>{
               return s.name ===name
           });
-          let filtered=state.filter((s)=>{
+          let filteredForAdd=state.filter((s)=>{
               return s.name !== name
           })
             return  [
-                ...filtered,
-               {...state[index],
+                ...filteredForAdd,
+               {...state[indexForAdd],
                 read:true},
                 
             ]
@@ -100,14 +100,14 @@ export function bookReducer(state=bookState,action){
                
             
         case REMOVE_FROM_READ:
-            let id=state.findIndex((s)=>{
+            let indexForRemove=state.findIndex((s)=>{
                 return s.name ===name
             });
-            let f=state.filter((s)=>{
+            let filteredForRemove=state.filter((s)=>{
                 return s.name !== name
             })
-              return  [...f,
-                {...state[id],
+              return  [...filteredForRemove,
+                {...state[indexForRemove],
                   read:false}
               ]
            

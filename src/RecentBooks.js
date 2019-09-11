@@ -13,7 +13,7 @@ class RecentBooks extends Component{
     });
      return(
      <div>
-       <ImageCard books={recentBooks}  gridColums='p-col-4'/>
+       <ImageCard books={recentBooks}  gridColums='p-col-12 p-md-4'/>
        
      </div>
      )
